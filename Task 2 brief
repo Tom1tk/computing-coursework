@@ -1,0 +1,19 @@
+Assignment task 2
+
+The program below reads from the keyboard names and marks of students. The 
+user is asked 
+after each student if they want to continue by entering another student or 
+exit the program. 
+a.   Comment the existing code.
+b.   Write the code that displays for each student the grade achieved.
+c.   Extend the program to count how many grades of A, B, C, D and F were 
+achieved.
+Marking scheme:
+1 mark for presenting the program in week 4
+Up to 5 marks for items a. and b.
+Up to 4 marks for item c.
+You need to do items a. and b. before approaching item c.
+
+
+FOR ANY CODE WITH <conio.h>, REPLACE WITH <ncurses.h> AND ADD -lncurses 
+WHEN COMPILING WITH g++ 

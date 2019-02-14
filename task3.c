@@ -2,7 +2,7 @@
 
 int main()
 {
-    char cont;
+    char cont='Y';
     char patientName[20];
     char dob[10];
     char doctorName[20];
@@ -10,6 +10,9 @@ int main()
     char time[5];
     char response='N';
     int option;
+    char prescID;
+    int prescETX;
+    char testID;
 
     printf("Welcome to Camb Surgery!\n");
     printf("Please use the menu below to book an appointment with a GP, extend prescriptions or view your results.\n");
@@ -21,19 +24,19 @@ int main()
 	printf("Please enter your date of birth as dd/mm/yyyy: ");
 	scanf("%s", dob);
 
-    while(1) {
+    for(;;) {
 
         printf("\n\nPlease select one of the following options.\n");
         printf(" 0. To exit the system.\n");
         printf(" 1. To book an appointment.\n");
         printf(" 2. To extend a prescription.\n");
         printf(" 3. To view your test results.\n");
-	  scanf("%d", &option);
+	      scanf("%d", &option);
 
-	  if (option== 0)
+	if (option== 0)
 	        break;
 	  else if (option== 1) {
-      do{
+	     do{
           printf("\n\nPlease enter the name of your GP: \n" );
           scanf("%s", &doctorName);
           printf("Thank you\nPlease enter the desired date of your appointment as dd/mm: \n");
@@ -52,18 +55,39 @@ int main()
           if (cont== 'N'){
             break;
           }
-          /* help the patient to book an appointment by asking them to enter
-	           the GP name, date and time.
-	        */
-	    }
-
-    /* write the code for options 2 and 3 */
-
-
-    }
-    return 0;
+	  }
+	  else if (option== 2) {
+	     do{
+      	  printf("\n\nPlease enter the prescription identifier of the prescription you would like to extend: \n");
+      	  scanf("%s", &prescID);
+      	  printf("\nHow many days would you like to extend this prescription for?\n");
+      	  scanf("%d", &prescETX);
+      	  printf("\nTo confirm, you would like to extend prescription ID: %s for a total of %d days? Please enter Y or yes and N for no\n", prescID, prescETX);
+      	  scanf("%s", &response);
+	     }while (response== 'N');
+          printf("Your prescription has been extended. Would you like to use another service? Please enter Y or N: \n");
+          scanf("%s", &cont);
+          if (cont== 'N'){
+            break;
+          }
+        }
+    else if (option== 3){
+      do{
+  	     printf("\n\nPlease enter your test result identifier: \n");
+  	     scanf("%s", &testID);
+  	     printf("\nYou have requested the results for test: %s. Is this correct? Please enter Y or yes and N for no\n", testID);
+  	     scanf("%s", &response);
+      }while (response== 'N');
+         printf("\n The results of your test are now printing. Would you like to use another service? Please enter Y or N: \n");
+         scanf("%s", &cont);
+         if (cont== 'N'){
+           break;
+        }
+	}
+  else;
 }
-
+return 0;
+}
 
 /*
 Assignment task 3

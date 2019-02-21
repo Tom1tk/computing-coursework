@@ -3,7 +3,7 @@
 int main() //Starts a function that will return an integer
 {
     char name[20], response, grade; //Initialises 3 string variables
-    int mark; //Initialises the marks integer variable
+    int mark, Fcount=0, Dcount=0, Ccount=0, Bcount=0, Acount=0; //Initialises the marks integer variable
     do {  //Starts a do while loop
       printf("Enter a student name: "); //Asks the user to input the student name
       scanf("%s", name); //reads the input from the user and assigns the pointer to the variable "name" as a string
@@ -13,21 +13,27 @@ int main() //Starts a function that will return an integer
       printf(" recieves the grade: "); //Outputs a string to form a sentence containing the student's name and grade
       if (mark < 40){ //Checks if the value of "mark" is less than 40
         printf("F"); //If so, the outputted grade is an F
-      } //closes the if loop
+      	Fcount = Fcount+1;
+      	} //closes the if loop
       else if (mark <= 49){ //If the previous statement isn't true, checks to see if "mark" is less than or equal to 49
           printf("D"); //If so, the outputted grade is a D
-        } //closes the if loop
+          Dcount = Dcount+1;
+      	} //closes the if loop
           else if (mark <= 59){ //If the previous statement also isn't true, checks to see if "mark" is less than or equal to 59
             printf("C"); //If so, the outputted grade is a C
-          } //closes the if loop
+            Ccount = Ccount+1;
+	  } //closes the if loop
             else if (mark <= 69){ //If the previous statement also isn't true, checks to see if "mark" is less than or equal to 69
               printf("B"); //If so, the outputted grade is a B
-            } //closes the if loop
+              Bcount = Bcount+1;
+	    } //closes the if loop
             else { //If all the previous statements are false then the grade must be higher than 69 so another if statement is not necessary
               printf("A"); //If so, the outputted grade must be an A
-            } //closes the if loop
+              Acount = Acount+1;
+	    } //closes the if loop
       getchar(); //reads a single character from stdin
-      printf("\nDo you want to add another student? Type Y for yes and N for No\n");
+      printf("\n\nNumber of students with F: %d \nNumber of students with D: %d \nNumber of students with C: %d \nNumber of students with B: %d \nNumber of students with A: %d ", Fcount, Dcount, Ccount, Bcount, Acount);
+      printf("\n\nDo you want to add another student? Type Y for yes and N for No\n");
       scanf("%c", &response);
     } while (response == 'Y');
     return 0;

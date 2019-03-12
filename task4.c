@@ -2,74 +2,73 @@
 
 int main()
 {
-    char answer;
-    int chances=3;
+    char answer[1];
+    int chances;
     int score=0;
 
+
     printf("Here is a quiz to test your knowledge of movies...\n\n");
-    do{
-    printf("Question 1\n");
-    printf("What's the name of the second part of the Lord of the Ring trilogy ?\n");
-    printf("a. The Return Of The King\n");
-    printf("b. Return Of The Shadow\n");
-    printf("c. The Two Towers\n");
-    printf("Make your choice: ");
-    scanf(" %s", &answer);
-    &chances-1;
-    printf("chances: %d \n", chances);
-    if (answer == 'c'){
-    	score = score + 1;
-        printf("Correct!\nCurrent score is %d", score);
-    	break;
-    	}else;
-	  printf("Incorrect! Try again\n\n");
-    }while (chances > 0);
+    for (chances=0; chances > 3; ++chances){
+      printf("Question 1 %d\n", chances);
+      printf("What's the name of the second part of the Lord of the Ring trilogy ?\n");
+      printf("a. The Return Of The King\n");
+      printf("b. Return Of The Shadow\n");
+      printf("c. The Two Towers\n");
+      printf("Make your choice: ");
+      scanf(" %c", &answer);
+      printf("chances: %d \n", chances);
+        if (answer == "c"){
+        	++score;
+          printf("Correct!\nCurrent score is %d \n", score);
+        	break;
+        }
+  	  printf("Incorrect! Try again\n\n");
+    }
     if (chances == 0){
     	printf("Incorrect! The correct answer was c \n");
     	}
   	printf("\nNext question!\n\n");
-  	chances=3;
-    do{
-    printf("Question 2\n");
-    printf("How many Dwarves went with Frodo to reclaim the Lonely mountain from Smaug?\n");
-    printf("a. 13\n");
-    printf("b. 6\n");
-    printf("c. 100\n");
-    printf("Make your choice: ");
-    scanf(" %s", &answer);
-    chances-1;
-    if (answer == 'a'){
-      score = score + 1;
-        printf("Correct!\nCurrent score is %d", score);
-      break;
-      }else;
-    printf("Incorrect! Try again\n\n");
-    }while (chances > 0);
+
+
+    for (chances=0; chances > 3; ++chances){
+      printf("Question 2\n");
+      printf("In The Hobbit, How many Dwarves went with Frodo to reclaim the Lonely mountain from Smaug?\n");
+      printf("a. 13\n");
+      printf("b. 6\n");
+      printf("c. 100\n");
+      printf("Make your choice: ");
+      scanf(" %c", &answer);
+        if (answer == "a"){
+          ++score;
+          printf("Correct!\nCurrent score is %d", score);
+          break;
+        }
+      printf("Incorrect! Try again\n\n");
+    }
     if (chances == 0){
       printf("Incorrect! The correct answer was a \n");
-      }else
+      }
   	printf("\nNext question!\n\n");
-	  chances=3;
 
-    do{
-    printf("Question 3\n");
-    printf("How many rings of power were created?\n");
-    printf("a. 3\n");
-    printf("b. 20\n");
-    printf("c. 1\n");
-    printf("Make your choice: ");
-    scanf(" %s", &answer);
-    chances-1;
-    if (answer == 'b'){
-      score = score + 1;
-      break;
-      }else;
-    printf("Incorrect! Try again\n\n");
-    }while (chances > 0);
+
+    for (chances=0; chances > 3; ++chances){
+      printf("Question 3\n");
+      printf("How many rings of power were created?\n");
+      printf("a. 3\n");
+      printf("b. 20\n");
+      printf("c. 1\n");
+      printf("Make your choice: ");
+      scanf(" %c", &answer);
+        if (answer == "b"){
+          ++score;
+          break;
+        }
+      printf("Incorrect! Try again\n\n");
+    }
     if (chances == 0){
       printf("Incorrect! The correct answer was b \n");
       printf("Final score is %d", score);
-      }else
+      }
     printf("\nThe end!");
 }
 

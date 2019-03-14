@@ -60,7 +60,7 @@ int main()
       printf("c. 1\n");
       printf("Make your choice: ");
       scanf(" %c", &answer);
-        if (answer == "b"){
+        if (answer == 'b'){
           ++score;
           break;
         }

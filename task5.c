@@ -2,7 +2,8 @@
 
 int main()
  {
-   int arr[10], oe[10], i, j;
+   int arr[10], i, j;
+   char oe[10];
 
    printf("Input 10 numbers:\n");
 
@@ -22,7 +23,7 @@ int main()
 
    for (i = 0; i < 10; i++){
       printf("%d ", arr[i]);
-      printf("%d ", oe[i]);
+      printf("%c ", oe[i]);
     }
    return 0;
  }

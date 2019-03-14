@@ -2,23 +2,27 @@
 
 int main()
  {
-   int arr[10], i;
-   int *pa;
-   pa = &arr[0];
+   int arr[10], oe[10], i, j;
 
-   printf("Input 10 numbers: ");
-
-/*   for (c >= '0' && c <= '9';){
-      ++arr[c-'0'];
-    }*/
+   printf("Input 10 numbers:\n");
 
    for (i = 0; i < 10; i++){
-      scanf("%d", arr[i]);
-      fflush(stdin);
+      scanf(" %d", &arr[i]);
+    }
+
+    for (i = 0; i < 10; i++){
+      if(arr[i] % 2 == 0){
+        'e' = &oe[i];
+      }
+      else{
+        'o' = &oe[i];
+      }
+
     }
 
    for (i = 0; i < 10; i++){
-      printf(" %d", arr[i]);
+      printf("%d ", arr[i]);
+      printf("%d ", oe[i]);
     }
    return 0;
  }

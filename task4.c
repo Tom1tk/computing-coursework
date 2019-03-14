@@ -2,14 +2,14 @@
 
 int main()
 {
-    char answer[1];
+    char answer;
     int chances;
     int score=0;
 
 
     printf("Here is a quiz to test your knowledge of movies...\n\n");
-    for (chances=0; chances > 3; ++chances){
-      printf("Question 1 %d\n", chances);
+    for (chances=0; chances < 3; ++chances){
+      printf("Question 1\n");
       printf("What's the name of the second part of the Lord of the Ring trilogy ?\n");
       printf("a. The Return Of The King\n");
       printf("b. Return Of The Shadow\n");
@@ -18,7 +18,7 @@ int main()
       fflush(stdin);
       scanf(" %c", &answer);
       printf("chances: %d \n", chances);
-        if (answer == "c"){
+        if (answer == 'c'){
         	++score;
           printf("Correct!\nCurrent score is %d \n", score);
         	break;
@@ -31,7 +31,7 @@ int main()
   	printf("\nNext question!\n\n");
 
 
-    for (chances=0; chances > 3; ++chances){
+    for (chances=0; chances < 3; ++chances){
       printf("Question 2\n");
       printf("In The Hobbit, How many Dwarves went with Frodo to reclaim the Lonely mountain from Smaug?\n");
       printf("a. 13\n");
@@ -39,7 +39,7 @@ int main()
       printf("c. 100\n");
       printf("Make your choice: ");
       scanf(" %c", &answer);
-        if (answer == "a"){
+        if (answer == 'a'){
           ++score;
           printf("Correct!\nCurrent score is %d", score);
           break;
@@ -52,7 +52,7 @@ int main()
   	printf("\nNext question!\n\n");
 
 
-    for (chances=0; chances > 3; ++chances){
+    for (chances=0; chances < 3; ++chances){
       printf("Question 3\n");
       printf("How many rings of power were created?\n");
       printf("a. 3\n");

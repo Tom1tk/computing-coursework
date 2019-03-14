@@ -15,6 +15,7 @@ int main()
       printf("b. Return Of The Shadow\n");
       printf("c. The Two Towers\n");
       printf("Make your choice: ");
+      fflush(stdin);
       scanf(" %c", &answer);
       printf("chances: %d \n", chances);
         if (answer == "c"){

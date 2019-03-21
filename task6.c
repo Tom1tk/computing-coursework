@@ -10,7 +10,7 @@ int main()
 	for(x=0; x<10; x++){
 		scanf(" %d", &arr[x]);
 	}
-	
+
 	do{
 
 	printf("\nEnter an operation from the following: \n +, -, *, / \n");
@@ -20,7 +20,7 @@ int main()
 	for(x=0; x<10; x++){
 		printf(" %d", arr[x]);
 	}
-	
+
 
 	if(operation == '+'){
 		for(x=0; x<10; x++){
@@ -30,7 +30,7 @@ int main()
 		printf("\nThe sum of the numbers is: %d", sum);
 	break;
 	}
-	
+
 	if(operation == '-'){
 		sub=arr[0];
 		for(x=1; x<10; x++){
@@ -70,10 +70,10 @@ return 0;
 
 Write a program that reads in 10 numbers into an array and an operation symbol that could be +, -, *, /. Perform the chosen operation on all the elements of the array and print the result.
 
-Make the program interactive. Display the operation symbols and ask the user to select one of them. Perform the chosen operation on all the elements of the array and print the result. Ask the user if they want to continue with another operation or stop.  
+Make the program interactive. Display the operation symbols and ask the user to select one of them. Perform the chosen operation on all the elements of the array and print the result. Ask the user if they want to continue with another operation or stop. ï¿½
 
 Marking scheme:
 
-    1 mark for presenting the program in week 8.
-    5 marks for item 1.
-    4 marks for item 2.  */
+ï¿½ï¿½ï¿½ 1 mark for presenting the program in week 8.
+ï¿½ï¿½ï¿½ 5 marks for item 1.
+ï¿½ï¿½ï¿½ 4 marks for item 2.  */

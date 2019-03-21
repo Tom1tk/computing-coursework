@@ -2,7 +2,7 @@
 
 int main()
  {
-   int arr[10], i, j;
+   int arr[10], i, j, x=0, y=0, even[10], odd[10], big=0;
    char oe[10];
 
    printf("Input 10 numbers:\n");
@@ -13,18 +13,52 @@ int main()
 
     for (i = 0; i < 10; i++){
       if(arr[i] % 2 == 0){
-        'e' = &oe[i];
+        oe[i] = 'e';
+        even[y] = arr[i];
+        y++;
       }
       else{
-        'o' = &oe[i];
+        oe[i] = 'o';
+        odd[x] = arr[i];
+        x++;
       }
-
     }
+    printf("\n");
 
    for (i = 0; i < 10; i++){
       printf("%d ", arr[i]);
-      printf("%c ", oe[i]);
     }
+    printf("\n");
+
+    for (i = 0; i < 10; i++){
+       printf("%c ", oe[i]);
+     }
+    printf("\n\n");
+
+     printf("The even numbers are: \n");
+     for (i = 0; i < y; i++){
+        printf("%d ", even[i]);
+      }
+      printf("\n");
+
+      printf("The odd numbers are: \n");
+      for (i = 0; i < x; i++){
+         printf("%d ", odd[i]);
+       }
+      printf("\n");
+
+      for (i = 0; i < x; i++){
+        if(odd[i]>odd[i+1])
+          big = odd[i];
+       }
+
+       if (big==0){
+         printf("There were no odd numbers");
+       }else{
+       printf("The largest odd number is %d", big);
+     }
+
+
    return 0;
  }
 

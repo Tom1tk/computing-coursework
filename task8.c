@@ -1,11 +1,33 @@
 #include <stdio.h>
+#include <string.h>
 
 int main ()
 {
+  int mark[30], x, i;
+  char name[30][10], temp;
+
+  printf("How many students are in the class?: ");
+  scanf(" %d", &x);
+  printf("\nInput %d student's names:\n", x);
+  for (i = 0; i < x; i++){
+     scanf(" %c", &temp);
+     strcpy(name[x], temp);
+   }
+
+  printf("\nPlease now enter the marks for each student\n");
+  for (i = 0; i < x; i++){
+     printf(" %c: ", name[i]);
+     scanf(" %d", &mark[i]);
+     printf("\n");
+   }
+
+   for (i = 0; i < x; i++){
+      printf(" %c: ", name[i]);
+      printf(" %d", mark[i]);
+    }
 
 
-
-return 0
+return 0;
 }
 
 /*
@@ -27,7 +49,7 @@ Marking scheme:
 	3 marks for the main() function that calls the other functions.
 	4 marks for writing the function that reads the students’ names and marks.
 4 marks for writing the function that displays the student’s name with the highest mark
-4 marks for writing the function that calculates and displays the average mark
+4 marks for writing the function that calculates and displays the average markrmm
 
 
 Example:

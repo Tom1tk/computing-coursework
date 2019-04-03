@@ -3,25 +3,13 @@
 
 int main (){
 
-  int x, i, option;
+  int x, i, option, avg=0;
 
   printf("How many students are in the class?: ");
   scanf(" %d", &x);
 
   int mark[x];
   char name[x][10];
-
-  printf("\nInput %d student's names:\n", x);
-  for (i = 0; i < x; i++){
-     scanf(" %s", name[x]);
-   }
-
-  printf("\nPlease now enter the marks for each student\n");
-  for (i = 0; i < x; i++){
-     printf(" %c: ", name[i]);
-     scanf(" %d", &mark[i]);
-     printf("\n");
-   }
 
   for(;;){
 
@@ -35,6 +23,17 @@ int main (){
 
       if (option==1){
 
+            printf("\nInput %d student's names:\n", x);
+            for (i = 0; i < x; i++){
+               scanf(" %s", name[x]);
+             }
+
+            printf("\nPlease now enter the marks for each student\n");
+            for (i = 0; i < x; i++){
+               printf(" %c: ", name[i]);
+               scanf(" %d", &mark[i]);
+               printf("\n");
+             }
 
       }else if (option==2){
 
@@ -46,8 +45,14 @@ int main (){
      }else if (option==3){
 
 
+
      }else if (option==4){
 
+            for (i = 0; i < x; i++){
+               avg += mark[i];
+            }
+            avg /= x;
+            printf("The average mark of the class is: %d", avg);
 
      }else if (option==5){
        break;

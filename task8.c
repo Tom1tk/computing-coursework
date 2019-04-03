@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 
-int main ()
-{
-  int mark[30], x, i;
-  char name[30][10], temp;
+int main (){
+
+  int x, i, option;
 
   printf("How many students are in the class?: ");
   scanf(" %d", &x);
+
+  int mark[x];
+  char name[x][10];
+
   printf("\nInput %d student's names:\n", x);
   for (i = 0; i < x; i++){
-     scanf(" %c", &temp);
-     strcpy(name[x], temp);
+     scanf(" %s", name[x]);
    }
 
   printf("\nPlease now enter the marks for each student\n");
@@ -21,14 +23,40 @@ int main ()
      printf("\n");
    }
 
-   for (i = 0; i < x; i++){
-      printf(" %c: ", name[i]);
-      printf(" %d", mark[i]);
+  for(;;){
+
+        printf("\n\nPlease select one of the following options.\n");
+        printf(" 1. Input students' names and marks\n");
+        printf(" 2. Display all the students' names and marks\n");
+        printf(" 3. Display the highest mark in the class\n");
+        printf(" 4. Display average class mark\n");
+        printf(" 5. Exit\n");
+        scanf("%d", &option);
+
+      if (option==1){
+
+
+      }else if (option==2){
+
+            for (i = 0; i < x; i++){
+               printf(" %c: ", name[i]);
+               printf(" %d\n", mark[i]);
+             }
+
+     }else if (option==3){
+
+
+     }else if (option==4){
+
+
+     }else if (option==5){
+       break;
+     }
     }
-
-
 return 0;
 }
+
+
 
 /*
 Assignment task 8

@@ -3,14 +3,14 @@
 
 int main (){
 
-  int x, i, option, avg=0;
-  int mark[10];
-  char name[10][10];
+  int x, i, option, stID, highest, avg=0;
+  int mark[30];
+  char name[30][10];
 
 
   for(;;){
 
-        printf("\n\nPlease select one of the following options.\n");
+        printf("Please select one of the following options.\n");
         printf(" 1. Input students' names and marks\n");
         printf(" 2. Display all the students' names and marks\n");
         printf(" 3. Display the highest mark in the class\n");
@@ -20,7 +20,7 @@ int main (){
 
       if (option==1){
 
-            printf("How many students are in the class?: ");
+            printf("How many students are in the class? (max 30): ");
             scanf("%d", &x);
 
             printf("\nInput %d student's names:\n", x);
@@ -29,7 +29,7 @@ int main (){
                scanf("%s", name[i]);
              }
 
-            printf("\nPlease now enter the marks for each student\n");
+            printf("\nPlease enter the marks for each student\n");
             for (i = 0; i < x; i++){
                printf("%s: ", name[i]);
                scanf(" %d", &mark[i]);
@@ -41,11 +41,18 @@ int main (){
             for (i = 0; i < x; i++){
                printf("%s: ", name[i]);
                printf("%d\n", mark[i]);
-             }
+            }
 
      }else if (option==3){
 
-
+          highest = mark[0];
+           for (i = 1; i < x; i++){
+              if (mark[i] > highest){
+                highest = mark[i];
+                stID = i;
+              }
+          }
+          printf("The student with the highest mark is %s with a mark of: %d", name[stID], highest);
 
      }else if (option==4){
 

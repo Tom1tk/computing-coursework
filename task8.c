@@ -4,12 +4,9 @@
 int main (){
 
   int x, i, option, avg=0;
+  int mark[10];
+  char name[10][10];
 
-  printf("How many students are in the class?: ");
-  scanf(" %d", &x);
-
-  int mark[x];
-  char name[x][10];
 
   for(;;){
 
@@ -23,14 +20,18 @@ int main (){
 
       if (option==1){
 
+            printf("How many students are in the class?: ");
+            scanf("%d", &x);
+
             printf("\nInput %d student's names:\n", x);
             for (i = 0; i < x; i++){
-               scanf(" %s", name[x]);
+               fflush(stdin);
+               scanf("%s", name[i]);
              }
 
             printf("\nPlease now enter the marks for each student\n");
             for (i = 0; i < x; i++){
-               printf(" %c: ", name[i]);
+               printf("%s: ", name[i]);
                scanf(" %d", &mark[i]);
                printf("\n");
              }
@@ -38,8 +39,8 @@ int main (){
       }else if (option==2){
 
             for (i = 0; i < x; i++){
-               printf(" %c: ", name[i]);
-               printf(" %d\n", mark[i]);
+               printf("%s: ", name[i]);
+               printf("%d\n", mark[i]);
              }
 
      }else if (option==3){

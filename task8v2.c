@@ -1,6 +1,27 @@
 #include <stdio.h>
 #include <string.h>
 
+int high(int num1, int num2)
+{
+      if (num1>num2){
+        return num1;
+      } else{
+        return num2;
+      }
+}
+
+int average(int num1, int num2, int x)
+{
+      int i;
+
+      for (i = 0; i < x; i++){
+          num1 += num2;
+        }
+      num1 /= x;
+      return num1;
+}
+
+
 int main (){
 
   int x, i, option, stID, highest, avg=0;
@@ -15,7 +36,7 @@ int main (){
         printf(" 2. Display all the students' names and marks\n");
         printf(" 3. Display the highest mark in the class\n");
         printf(" 4. Display average class mark\n");
-        printf(" 5. Exit\n");
+        printf(" 5. Exit\n");avg = average(avg,mark[i],x);
         scanf("%d", &option);
 
       if (option==1){
@@ -48,18 +69,20 @@ int main (){
           highest = mark[0];
            for (i = 1; i < x; i++){
               if (mark[i] > highest){
-                highest = mark[i];
                 stID = i;
               }
+              highest = high(mark[i],highest);
           }
           printf("The student with the highest mark is %s with a mark of: %d\n", name[stID], highest);
 
      }else if (option==4){
 
-            for (i = 0; i < x; i++){
+            /*for (i = 0; i < x; i++){
                avg += mark[i];
+
             }
-            avg /= x;
+            avg /= x;*/
+            avg = average(avg,mark[i],x);
             printf("The average mark of the class is: %d\n", avg);
 
      }else if (option==5){

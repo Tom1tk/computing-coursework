@@ -1,89 +1,90 @@
 #include <stdio.h>
 #include <string.h>
 
-int high(int num1, int num2)
+int x, i, option, stID, highest, avg=0;
+int mark[30];
+char name[30][10];
+
+void printMenu(){
+      printf("\nPlease select one of the following options.\n");
+      printf(" 1. Input students' names and marks\n");
+      printf(" 2. Display all the students' names and marks\n");
+      printf(" 3. Display the highest mark in the class\n");
+      printf(" 4. Display average class mark\n");
+      printf(" 5. Exit\n");
+}
+
+void students()
 {
-      if (num1>num2){
-        return num1;
-      } else{
-        return num2;
+      printf("How many students are in the class? (max 30): ");
+      scanf("%d", &x);
+
+      printf("\nInput %d student's names:\n", x);
+      for (i = 0; i < x; i++){
+         fflush(stdin);
+         scanf("%s", name[i]);
+       }
+
+      printf("\nPlease enter the marks for each student\n");
+      for (i = 0; i < x; i++){
+         printf("%s: ", name[i]);
+         scanf(" %d", &mark[i]);
+         printf("\n");
+       }
+}
+
+void printStudents()
+{
+      for (i = 0; i < x; i++){
+         printf("%s: ", name[i]);
+         printf("%d\n", mark[i]);
       }
 }
 
-int average(int num1, int num2, int x)
+void highMark()
 {
-      int i;
+      highest = mark[0];
+       for (i = 1; i < x; i++){
+          if (mark[i] > highest){
+            highest = mark[i];
+            stID = i;
+          }
+      }
+      printf("The student with the highest mark is %s with a mark of: %d\n", name[stID], highest);
+}
 
+void averageMark()
+{
       for (i = 0; i < x; i++){
-          num1 += num2;
-        }
-      num1 /= x;
-      return num1;
+         avg += mark[i];
+      }
+      avg /= x;
+      printf("The average mark of the class is: %d\n", avg);
 }
 
 
-int main (){
-
-  int x, i, option, stID, highest, avg=0;
-  int mark[30];
-  char name[30][10];
-
-
+int main ()
+{
   for(;;){
 
-        printf("\nPlease select one of the following options.\n");
-        printf(" 1. Input students' names and marks\n");
-        printf(" 2. Display all the students' names and marks\n");
-        printf(" 3. Display the highest mark in the class\n");
-        printf(" 4. Display average class mark\n");
-        printf(" 5. Exit\n");avg = average(avg,mark[i],x);
+        printMenu();
         scanf("%d", &option);
 
       if (option==1){
 
-            printf("How many students are in the class? (max 30): ");
-            scanf("%d", &x);
-
-            printf("\nInput %d student's names:\n", x);
-            for (i = 0; i < x; i++){
-               fflush(stdin);
-               scanf("%s", name[i]);
-             }
-
-            printf("\nPlease enter the marks for each student\n");
-            for (i = 0; i < x; i++){
-               printf("%s: ", name[i]);
-               scanf(" %d", &mark[i]);
-               printf("\n");
-             }
+        students();
 
       }else if (option==2){
 
-            for (i = 0; i < x; i++){
-               printf("%s: ", name[i]);
-               printf("%d\n", mark[i]);
-            }
+        printStudents();
 
      }else if (option==3){
 
-          highest = mark[0];
-           for (i = 1; i < x; i++){
-              if (mark[i] > highest){
-                stID = i;
-              }
-              highest = high(mark[i],highest);
-          }
-          printf("The student with the highest mark is %s with a mark of: %d\n", name[stID], highest);
+        highMark();
 
      }else if (option==4){
 
-            /*for (i = 0; i < x; i++){
-               avg += mark[i];
-
-            }
-            avg /= x;*/
-            avg = average(avg,mark[i],x);
-            printf("The average mark of the class is: %d\n", avg);
+        averageMark();
 
      }else if (option==5){
        break;

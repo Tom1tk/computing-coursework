@@ -15,7 +15,7 @@ int main (){
         printf(" 2. Display all the students' names and marks\n");
         printf(" 3. Display the highest mark in the class\n");
         printf(" 4. Display average class mark\n");
-        printf(" 5. Exit\n");
+        printf(" 5. Exit\n");4
         scanf("%d", &option);
 
       if (option==1){

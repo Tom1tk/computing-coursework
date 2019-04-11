@@ -5,7 +5,8 @@ int x, i, option, stID, highest, avg=0;
 int mark[30];
 char name[30][10];
 
-void printMenu(){
+void printMenu()
+{
       printf("\nPlease select one of the following options.\n");
       printf(" 1. Input students' names and marks\n");
       printf(" 2. Display all the students' names and marks\n");

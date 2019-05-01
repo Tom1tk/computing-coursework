@@ -27,7 +27,7 @@ int main()
 			sum=arr[x]+sum;
 		}
 
-		printf("\nThe sum of the numbers is: %d", sum);
+		printf("\nThe sum of the numbers is: %d\n", sum);
 	break;
 	}
 
@@ -38,7 +38,7 @@ int main()
 		}
 
 		//sub=sub-arr[9];
-		printf("\nThe numbers subtracted from eachother equal to: %d", sub);
+		printf("\nThe numbers subtracted from eachother equal to: %d\n", sub);
 	break;
 	}
 
@@ -47,7 +47,7 @@ int main()
 		for(x=1; x<10; x++){
 			mult=arr[x]*mult;
 		}
-		printf("\nThe product of the numbers is: %d", mult);
+		printf("\nThe product of the numbers is: %d\n", mult);
 	break;
 	}
 
@@ -56,7 +56,7 @@ int main()
 		for(x=1; x<10; x++){
 			div=div/arr[x];
 		}
-		printf("\nEach number divided by the next is equal to: %d", div);
+		printf("\nEach number divided by the next is equal to: %d\n", div);
 	break;
 	}
 

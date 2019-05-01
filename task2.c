@@ -7,7 +7,7 @@ int main() //Starts a function that will return an integer
     do {  //Starts a do while loop
       printf("Enter a student name: "); //Asks the user to input the student name
       scanf("%s", name); //reads the input from the user and assigns the pointer to the variable "name" as a string
-      printf("Enter the student’s mark: "); //Asks the user to input the student's mark
+      printf("Enter the student's mark: "); //Asks the user to input the student's mark
       scanf("%d", &mark); //reads the input from the user and assigns the pointer to the variable "mark" as an integer
       printf("%s", name); //Outputs the name of the student from the variable "name"
       printf(" recieves the grade: "); //Outputs a string to form a sentence containing the student's name and grade

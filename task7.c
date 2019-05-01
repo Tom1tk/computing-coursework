@@ -31,7 +31,7 @@ int main()
       small = smallest(small, pos[i]);
     }
 
-  printf("The smallest positive number is: %d", small);
+  printf("The smallest positive number is: %d\n", small);
 
 return 0;
 }

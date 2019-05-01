@@ -17,7 +17,6 @@ int main()
       printf("Make your choice: ");
       fflush(stdin);
       scanf(" %c", &answer);
-      printf("chances: %d \n", chances);
         if (answer == 'c'){
         	++score;
           printf("Correct!\nCurrent score is %d \n", score);
@@ -25,7 +24,7 @@ int main()
         }
   	  printf("Incorrect! Try again\n\n");
     }
-    if (chances == 0){
+    if (chances == 3){
     	printf("Incorrect! The correct answer was c \n");
     	}
   	printf("\nNext question!\n\n");
@@ -46,7 +45,7 @@ int main()
         }
       printf("Incorrect! Try again\n\n");
     }
-    if (chances == 0){
+    if (chances == 3){
       printf("Incorrect! The correct answer was a \n");
       }
   	printf("\nNext question!\n\n");
@@ -66,10 +65,10 @@ int main()
         }
       printf("Incorrect! Try again\n\n");
     }
-    if (chances == 0){
+    if (chances == 3){
       printf("Incorrect! The correct answer was b \n");
-      printf("Final score is %d", score);
       }
+    printf("Final score is %d", score);
     printf("\nThe end!");
 }
 

@@ -69,7 +69,7 @@ int main()
       printf("Incorrect! The correct answer was b \n");
       }
     printf("Final score is %d", score);
-    printf("\nThe end!");
+    printf("\nThe end!\n");
 }
 
 /*Assignment task 4

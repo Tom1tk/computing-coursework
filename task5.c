@@ -7,17 +7,17 @@ int main()
 
    printf("Input 10 numbers:\n");
 
-   for (i = 0; i < 10; i++){
+   for (i = 0; i < 10; i++){ //loops to input 10 numbers into the array
       scanf(" %d", &arr[i]);
     }
 
-    for (i = 0; i < 10; i++){
+    for (i = 0; i < 10; i++){ //checks if each value in the array is divisible by 2, therefore even, and puts it into the even array
       if(arr[i] % 2 == 0){
         oe[i] = 'e';
         even[y] = arr[i];
         y++;
       }
-      else{
+      else{ //every other value goes into the odd array
         oe[i] = 'o';
         odd[x] = arr[i];
         x++;
@@ -25,37 +25,37 @@ int main()
     }
     printf("\n");
 
-   for (i = 0; i < 10; i++){
+   for (i = 0; i < 10; i++){ //displays all the numbers
       printf("%d ", arr[i]);
     }
     printf("\n");
 
-    for (i = 0; i < 10; i++){
+    for (i = 0; i < 10; i++){ //displays wether each is odd or even with 'o' or 'e'
        printf("%c ", oe[i]);
      }
     printf("\n\n");
 
-     printf("The even numbers are: \n");
+     printf("The even numbers are: \n"); //prints all the numbers from even array
      for (i = 0; i < y; i++){
         printf("%d ", even[i]);
       }
       printf("\n");
 
-      printf("The odd numbers are: \n");
+      printf("The odd numbers are: \n"); //prints all the numbers from odd array
       for (i = 0; i < x; i++){
          printf("%d ", odd[i]);
        }
       printf("\n");
 
-      for (i = 0; i < x; i++){
+      for (i = 0; i < x; i++){ //compares each odd number to find the biggest
         if(odd[i]>odd[i+1])
           big = odd[i];
        }
 
-       if (big==0){
+       if (big==0){ //if big = 0 then no odd numbers
          printf("There were no odd numbers");
        }else{
-       printf("The largest odd number is %d\n", big);
+       printf("The largest odd number is %d", big); //prints biggest odd number
      }
 
 

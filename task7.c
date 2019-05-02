@@ -6,20 +6,20 @@ int smallest(int num1, int num2)
     return num2;
   }else
   return num1;
-}
+} //function takes two integers, compares the two and returns the smallest value
 
 int main()
 {
   int arr[10], pos[10], i, x, j=0, small;
 
   printf("How many numbers?:");
-  scanf(" %d", &x);
-  printf("\nInput %d numbers:\n", x);
+  scanf(" %d", &x); //number of times to loop the for
+  printf("\nInput %d numbers:\n", x); //recieves and stores numbers in an array
   for (i = 0; i < x; i++){
      scanf(" %d", &arr[i]);
    }
 
-  for (i = 0; i < x; i++){
+  for (i = 0; i < x; i++){ //takes the array and moves positive values into another array
      if(arr[i]>0){
       pos[j] = arr[i];
       j++;
@@ -28,10 +28,10 @@ int main()
 
    small = pos[0];
    for (i = 1; i < j; i++){
-      small = smallest(small, pos[i]);
+      small = smallest(small, pos[i]); //calls the function with each value of positive array and saves to 'small'
     }
 
-  printf("The smallest positive number is: %d\n", small);
+  printf("The smallest positive number is: %d", small); //prints the 'small' int value
 
 return 0;
 }

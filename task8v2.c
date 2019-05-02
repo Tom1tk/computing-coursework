@@ -6,7 +6,7 @@ int mark[30];
 char name[30][10];
 
 void printMenu()
-{
+{ //function that prits the menu
       printf("\nPlease select one of the following options.\n");
       printf(" 1. Input students' names and marks\n");
       printf(" 2. Display all the students' names and marks\n");
@@ -16,7 +16,7 @@ void printMenu()
 }
 
 void students()
-{
+{ //function that takes the student's names and marks and puts them into arrays
       printf("How many students are in the class? (max 30): ");
       scanf("%d", &x);
 
@@ -35,7 +35,7 @@ void students()
 }
 
 void printStudents()
-{
+{ //function that prints all the info from student arrays
       for (i = 0; i < x; i++){
          printf("%s: ", name[i]);
          printf("%d\n", mark[i]);
@@ -43,52 +43,52 @@ void printStudents()
 }
 
 void highMark()
-{
+{ //function that finds the highest mark and student name
       highest = mark[0];
-       for (i = 1; i < x; i++){
-          if (mark[i] > highest){
+       for (i = 1; i < x; i++){ //loops for all students
+          if (mark[i] > highest){ //iterates over every mark
             highest = mark[i];
-            stID = i;
+            stID = i; //copies array ID to find the correct student name
           }
       }
-      printf("The student with the highest mark is %s with a mark of: %d\n", name[stID], highest);
+      printf("The student with the highest mark is %s with a mark of: %d\n", name[stID], highest); //prints mark and name
 }
 
 void averageMark()
-{
+{ //fucniton that averages all the marks and prints the values
       for (i = 0; i < x; i++){
-         avg += mark[i];
+         avg += mark[i]; //loops adding each value together
       }
-      avg /= x;
-      printf("The average mark of the class is: %d\n", avg);
+      avg /= x; //divides from amount of values in array
+      printf("The average mark of the class is: %d\n", avg); //prints average
 }
 
 
 int main ()
 {
-  for(;;){
+  for(;;){ //starts an infinte loop
 
-        printMenu();
+        printMenu(); //calls the menu function then recieves option input
         scanf("%d", &option);
 
       if (option==1){
 
-        students();
+        students(); //calls function
 
       }else if (option==2){
 
-        printStudents();
+        printStudents(); //calls function
 
      }else if (option==3){
 
-        highMark();
+        highMark(); //calls function
 
      }else if (option==4){
 
-        averageMark();
+        averageMark(); //calls function
 
      }else if (option==5){
-       break;
+       break; //breaks from infinite loop
      }
     }
 return 0;

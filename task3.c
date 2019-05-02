@@ -17,7 +17,9 @@ int main()
     printf("Welcome to Camb Surgery!\n");
     printf("Please use the menu below to book an appointment with a GP, extend prescriptions or view your results.\n");
 
-    for(;;) {
+    //Opening welcome which is only used once so is outside of the for loop
+
+    for(;;) { //starts an infinte loop
 
         printf("\n\nPlease select one of the following options.\n");
         printf(" 0. To exit the system.\n");
@@ -26,11 +28,13 @@ int main()
         printf(" 3. To view your test results.\n");
 	      scanf("%d", &option);
 
+        //prints out the menu
+
 	if (option== 0){
 	        break;
         }
 	  else if (option== 1) {
-	     do{
+	     do{ //starts a do while loop
           printf("\n\nPlease enter the name of your GP: \n" );
           scanf("%s", &doctorName);
           printf("Thank you\nPlease enter the desired date of your appointment as dd/mm: \n");
@@ -42,46 +46,48 @@ int main()
           printf(" on %s", appointmentDate);
           printf(" at %s\n", time);
           printf("Please enter Y for yes and N for no\n" );
-          scanf(" %c", &response);
-        }while (response== 'N');
+          scanf("%c", &response);
+        }while (response== 'N'); //loops while the response is N
           printf("Your appointment has been booked. Would you like to use another service? Please enter Y or N: \n");
-          scanf(" %c", &cont);
-          if (cont== 'N'){
+          scanf("%c", &cont);
+          if (cont== 'N'){ //exits the for loop if answer is N
             break;
           }
+
+
 	  }
 	  else if (option== 2) {
-	     do{
+	     do{ //starts a do while loop
          fflush(stdin); //empties the buffer. To be used before you read a string.
       	  printf("\n\nPlease enter the prescription identifier of the prescription you would like to extend: \n");
-      	  scanf(" %s", &prescID);
+      	  scanf(" %c", &prescID);
       	  printf("\nHow many days would you like to extend this prescription for?\n");
       	  scanf("%d", &prescETX);
           printf("\nTo confirm, you would like to extend prescription ID: %s for a total of %d days? Please enter Y or yes and N for no\n", prescID, prescETX);
       	  scanf(" %c", &response);
-	     }while (response== 'N');
+	     }while (response== 'N'); //loops while the response is N
           printf("Your prescription has been extended. Would you like to use another service? Please enter Y or N: \n");
           scanf(" %c", &cont);
-          if (cont== 'N'){
+          if (cont== 'N'){ //exits the for loop if answer is N
             break;
           }
         }
     else if (option== 3){
-      do{
+      do{ //starts a do while loop
   	     printf("\n\nPlease enter your test result identifier: \n");
-  	     scanf(" %s", &testID);
+  	     scanf("%c", &testID);
   	     printf("\nYou have requested the results for test: %s. Is this correct? Please enter Y or yes and N for no\n", testID);
-  	     scanf(" %c", &response);
-      }while (response== 'N');
+  	     scanf("%c", &response);
+      }while (response== 'N'); //loops while the response is N
          printf("\n The results of your test are now printing. Would you like to use another service? Please enter Y or N: \n");
-         scanf(" %c", &cont);
-         if (cont== 'N'){
+         scanf("%c", &cont);
+         if (cont== 'N'){ //exits the for loop if answer is N
            break;
         }
 	}
 
 }
-return 0;
+return 0; //ends the program 
 }
 
 /*

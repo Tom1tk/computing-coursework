@@ -8,7 +8,7 @@ int main()
 
 
     printf("Here is a quiz to test your knowledge of movies...\n\n");
-    for (chances=0; chances < 3; ++chances){
+    for (chances=0; chances < 3; ++chances){ //starts a for loop which only lets the user try 3 times
       printf("Question 1\n");
       printf("What's the name of the second part of the Lord of the Ring trilogy ?\n");
       printf("a. The Return Of The King\n");
@@ -17,20 +17,20 @@ int main()
       printf("Make your choice: ");
       fflush(stdin);
       scanf(" %c", &answer);
-        if (answer == 'c'){
+        if (answer == 'c'){ //increments the score and breaks the for loop when recieving correct answer
         	++score;
           printf("Correct!\nCurrent score is %d \n", score);
         	break;
         }
   	  printf("Incorrect! Try again\n\n");
     }
-    if (chances == 3){
+    if (chances == 3){ //gives the user the answer if they failed the 3 chances
     	printf("Incorrect! The correct answer was c \n");
     	}
   	printf("\nNext question!\n\n");
 
 
-    for (chances=0; chances < 3; ++chances){
+    for (chances=0; chances < 3; ++chances){ //starts a for loop which only lets the user try 3 times
       printf("Question 2\n");
       printf("In The Hobbit, How many Dwarves went with Frodo to reclaim the Lonely mountain from Smaug?\n");
       printf("a. 13\n");
@@ -38,37 +38,37 @@ int main()
       printf("c. 100\n");
       printf("Make your choice: ");
       scanf(" %c", &answer);
-        if (answer == 'a'){
+        if (answer == 'a'){ //increments the score and breaks the for loop when recieving correct answer
           ++score;
           printf("Correct!\nCurrent score is %d", score);
           break;
         }
       printf("Incorrect! Try again\n\n");
     }
-    if (chances == 3){
+    if (chances == 3){ //gives the user the answer if they failed the 3 chances
       printf("Incorrect! The correct answer was a \n");
       }
   	printf("\nNext question!\n\n");
 
 
-    for (chances=0; chances < 3; ++chances){
+    for (chances=0; chances < 3; ++chances){ //starts a for loop which only lets the user try 3 times
       printf("Question 3\n");
       printf("How many rings of power were created?\n");
       printf("a. 3\n");
       printf("b. 20\n");
       printf("c. 1\n");
       printf("Make your choice: ");
-      scanf(" %c", &answer);
+      scanf(" %c", &answer); //increments the score and breaks the for loop when recieving correct answer
         if (answer == 'b'){
           ++score;
           break;
         }
       printf("Incorrect! Try again\n\n");
     }
-    if (chances == 3){
+    if (chances == 3){ //gives the user the answer if they failed the 3 chances
       printf("Incorrect! The correct answer was b \n");
       }
-    printf("Final score is %d", score);
+    printf("Final score is %d", score); //prints the total score and ends the program
     printf("\nThe end!\n");
 }
 

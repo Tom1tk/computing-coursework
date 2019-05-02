@@ -7,60 +7,59 @@ int main()
 
 	printf("Enter 10 numbers: \n");
 
-	for(x=0; x<10; x++){
+	for(x=0; x<10; x++){ //loops to input 10 numbers into the array
 		scanf(" %d", &arr[x]);
 	}
 
-	do{
+	do{ //starts a do while loop
 
 	printf("\nEnter an operation from the following: \n +, -, *, / \n");
 	scanf(" %c", &operation);
-	printf("Operation: %c \n", operation);
+	printf("Operation: %c \n", operation); //user inputs operation into 'operation' char
 
-	for(x=0; x<10; x++){
+	for(x=0; x<10; x++){ //prints the array
 		printf(" %d", arr[x]);
 	}
 
 
-	if(operation == '+'){
+	if(operation == '+'){ //if add is chosen, sum of all the numbers in array
 		for(x=0; x<10; x++){
 			sum=arr[x]+sum;
 		}
 
-		printf("\nThe sum of the numbers is: %d\n", sum);
+		printf("\nThe sum of the numbers is: %d", sum); //prints answer and break
 	break;
 	}
 
-	if(operation == '-'){
+	if(operation == '-'){ //subtracts each number in the array
 		sub=arr[0];
 		for(x=1; x<10; x++){
 			sub=sub-arr[x];
 		}
 
-		//sub=sub-arr[9];
-		printf("\nThe numbers subtracted from eachother equal to: %d\n", sub);
+		printf("\nThe numbers subtracted from eachother equal to: %d", sub); //prints answer and breaks
 	break;
 	}
 
-	if(operation == '*'){
+	if(operation == '*'){ //multiplies each number in the array
 		mult=arr[0];
 		for(x=1; x<10; x++){
 			mult=arr[x]*mult;
 		}
-		printf("\nThe product of the numbers is: %d\n", mult);
+		printf("\nThe product of the numbers is: %d", mult); //prints answer and breaks
 	break;
 	}
 
-	if(operation =='/'){
+	if(operation =='/'){ //divides each number in the array
 		div=arr[0];
 		for(x=1; x<10; x++){
 			div=div/arr[x];
 		}
-		printf("\nEach number divided by the next is equal to: %d\n", div);
+		printf("\nEach number divided by the next is equal to: %d", div); //prints answer and breaks
 	break;
 	}
 
-	}while(operation != ('+'|'-'|'*'|'/'));
+}while(operation != ('+'|'-'|'*'|'/')); //if anything else is entered, loop exits
 
 return 0;
 }
